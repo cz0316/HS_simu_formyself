@@ -1,0 +1,21 @@
+Package: HEARTSVG.simu
+Type: Package
+Title: HEARTSVG_simu.  For simulations.
+Version: 1.1.0
+Author: Xin Yuan
+Maintainer: The package maintainer <yuanxin_yx@sjtu.edu.cn>
+Description: Finding spatially variable genes(SVGs)by testing marginal stability. 
+License: GPL
+Encoding: UTF-8
+Imports: TTR, stringr, fpp2, seasonal, cluster, poolr, Seurat,
+        SeuratObject, spatstat, spatstat.utils, spatstat.geom,
+        spatstat.core, spatstat.data, spatstat.random, spatstat.linnet,
+        spatstat.sparse, reshape2, data.table, dplyr, foreach,
+       ggplot2, MASS, EnvStats
+RoxygenNote: 7.2.3
+NeedsCompilation: no
+Packaged: 2023-00-07 12:02:02 UTC; yuanxin
+
+Remotes:
+  - https://github.com/cz0316/HS_simu_formyself
+
