@@ -41,11 +41,11 @@ new.zi=function(lambda = 0.7, spots, se, ns, type, se.p, se.size = 0.2,
   # gray_img=imager::grayscale(image) 
   re_img=imager::imresize(imager::grayscale(image) ,scale =round((win)/700,2)) ## 先灰度再缩放
   img_coor=to_dt(round(as.matrix(re_img),1))
-  img_coor=img_coor[img_coor$value!=0.5,]; img_coor$value[img_coor$value<0.5]<-0;img_coor$value[img_coor$value>0.5]<-1
+  img_coor=img_coor[img_coor$value!=0.5,]; img_coorvalue[imgcoorvalue[img_coorvalue<0.5]<-0;img_coorvalue[imgcoorvalue[img_coorvalue>0.5]<-1
   
   ## 合并，并区分marked area
   coor.s1 = merge(coor.dt,img_coor,by=c('row','col'))
-  # coor.s1=coor.s1[coor.s1$value!=0.5,]; coor.s1$value[coor.s1$value<0.5]<-0;coor.s1$value[coor.s1$value>0.5]<-1
+  # coor.s1=coor.s1[coor.s1value!=0.5,];coor.s1value!=0.5,]; coor.s1value[coor.s1value<0.5]<−0;coor.s1value<0.5]<-0;coor.s1value[coor.s1$value>0.5]<-1
   
   ## 
   coor.mark=coor.s1 %>% dplyr::filter(value==1) %>% dplyr::select(num,row,col)
@@ -134,7 +134,7 @@ new.zi2=function(lambda = 0.7, spots, se, ns, type, se.p, se.size = 0.2,
   re_img=imager::imresize(imager::grayscale(image) ,
                           scale =round(win/700,2)) ## 先灰度再缩放
   img_coor=to_dt(round(as.matrix(re_img),1))
-  img_coor=img_coor[img_coor$value!=0.5,]; img_coor$value[img_coor$value<0.5]<-0;img_coor$value[img_coor$value>0.5]<-1
+  img_coor=img_coor[img_coor$value!=0.5,]; img_coorvalue[imgcoorvalue[img_coorvalue<0.5]<-0;img_coorvalue[imgcoorvalue[img_coorvalue>0.5]<-1
   
   ## 合并，并区分marked area
   # coor.s1 = merge(coor.dt,img_coor,by=c('row','col'))
@@ -234,11 +234,11 @@ new.zi3=function(lambda = 0.7, spots, se, ns, type, se.p, se.size = 0.2,
   # gray_img=imager::grayscale(image) 
   re_img=imager::imresize(imager::grayscale(image) ,scale =round((win)/700,2)) ## 先灰度再缩放
   img_coor=to_dt(round(as.matrix(re_img),1))
-  img_coor=img_coor[img_coor$value!=0.5,]; img_coor$value[img_coor$value<0.5]<-0;img_coor$value[img_coor$value>0.5]<-1
+  img_coor=img_coor[img_coor$value!=0.5,]; img_coorvalue[imgcoorvalue[img_coorvalue<0.5]<-0;img_coorvalue[imgcoorvalue[img_coorvalue>0.5]<-1
   
   ## 合并，并区分marked area
   coor.s1 = merge(coor.dt,img_coor,by=c('row','col'))
-  # coor.s1=coor.s1[coor.s1$value!=0.5,]; coor.s1$value[coor.s1$value<0.5]<-0;coor.s1$value[coor.s1$value>0.5]<-1
+  # coor.s1=coor.s1[coor.s1value!=0.5,];coor.s1value!=0.5,]; coor.s1value[coor.s1value<0.5]<−0;coor.s1value<0.5]<-0;coor.s1value[coor.s1$value>0.5]<-1
   
   ## 
   coor.mark=coor.s1 %>% dplyr::filter(value==1) %>% dplyr::select(num,row,col)
@@ -327,10 +327,11 @@ irreg.zi=function(lambda = 0.7, spots, se, ns, type, se.p, se.size = 0.2,
                   outlier = FALSE) {
   
   win1 = ceiling(sqrt(spots/lambda))
-  win=win*sqrt(2)
+  win=win1/7*10   ## 缩放
+
   coor = spatstat.random::rpoispp(lambda = lambda, win = spatstat.geom::owin(c(0,win), c(0, win)))
   coor.dt = data.frame(num = paste0("c-", 1:length(coor$x)), 
-                       row = round(coor$x)+1, col = round(coor$y)+1, 
+                       row = round(coorx)+1,col=round(coorx)+1, col = round(coory)+1, 
                        row.names = paste0("c_",1:length(coor$x)))
   
   ## 对于灰度图像的处理
@@ -338,11 +339,11 @@ irreg.zi=function(lambda = 0.7, spots, se, ns, type, se.p, se.size = 0.2,
   # gray_img=imager::grayscale(image) 
   re_img=imager::imresize(imager::grayscale(image) ,scale =round((win1)/700,2)) ## 先灰度再缩放
   img_coor=to_dt(round(as.matrix(re_img),1))
-  img_coor=img_coor[img_coor$value!=0.5,]; img_coor$value[img_coor$value<0.5]<-0;img_coor$value[img_coor$value>0.5]<-1
+  img_coor=img_coor[img_coor$value!=0.5,]; img_coorvalue[imgcoorvalue[img_coorvalue<0.5]<-0;img_coorvalue[imgcoorvalue[img_coorvalue>0.5]<-1
   
   ## 合并，并区分marked area
   coor.s1 = merge(coor.dt,img_coor,by=c('row','col'))
-  # coor.s1=coor.s1[coor.s1$value!=0.5,]; coor.s1$value[coor.s1$value<0.5]<-0;coor.s1$value[coor.s1$value>0.5]<-1
+  # coor.s1=coor.s1[coor.s1value!=0.5,];coor.s1value!=0.5,]; coor.s1value[coor.s1value<0.5]<−0;coor.s1value<0.5]<-0;coor.s1value[coor.s1$value>0.5]<-1
   
   ## 
   coor.mark=coor.s1 %>% dplyr::filter(value==1) %>% dplyr::select(num,row,col)
@@ -433,11 +434,11 @@ new.norm=function(lambda = 0.7, spots, se, ns, se.p, ns.p,
   # gray_img=imager::grayscale(image) 
   re_img=imager::imresize(imager::grayscale(image) ,scale =round((win)/700,2)) ## 先灰度再缩放
   img_coor=to_dt(round(as.matrix(re_img),1))
-  img_coor=img_coor[img_coor$value!=0.5,]; img_coor$value[img_coor$value<0.5]<-0;img_coor$value[img_coor$value>0.5]<-1
+  img_coor=img_coor[img_coor$value!=0.5,]; img_coorvalue[imgcoorvalue[img_coorvalue<0.5]<-0;img_coorvalue[imgcoorvalue[img_coorvalue>0.5]<-1
   
   ## 合并，并区分marked area
   coor.s1 = merge(coor.dt,img_coor,by=c('row','col'))
-  # coor.s1=coor.s1[coor.s1$value!=0.5,]; coor.s1$value[coor.s1$value<0.5]<-0;coor.s1$value[coor.s1$value>0.5]<-1
+  # coor.s1=coor.s1[coor.s1value!=0.5,];coor.s1value!=0.5,]; coor.s1value[coor.s1value<0.5]<−0;coor.s1value<0.5]<-0;coor.s1value[coor.s1$value>0.5]<-1
   
   ## 
   coor.mark=coor.s1 %>% dplyr::filter(value==1) %>% dplyr::select(num,row,col)
