@@ -15,6 +15,5 @@ Imports: TTR, stringr, fpp2, seasonal, cluster, poolr, Seurat,
 RoxygenNote: 7.2.3
 NeedsCompilation: no
 Packaged: 2023-00-07 12:02:02 UTC; yuanxin
-Remotes:
-  - https://github.com/cz0316/HS_simu_formyself
+Remotes:cz0316/HS_simu_formyself
 
