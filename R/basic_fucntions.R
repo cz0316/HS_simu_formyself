@@ -44,6 +44,7 @@ scale.count=function(data,qh=0.985){
 #' @param size the size para in the NB distribution
 #'
 #' @return  A numeric vector.
+#' @export
 simu_zi=function(family,subject.n,zi.p=0.5,
                  mu=0.5,size=0.25){
   ##' family: ZIP or ZINB

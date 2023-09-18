@@ -21,14 +21,6 @@ if  zi.p=0, it generates data which follows Poisson or NB distribution.}
 }
 \value{
 A numeric vector.
-family: ZIP or ZINB
-subject.n: the number of spots,because each gene follow a zero-infalted P/NB distribution
-zi.p: zero proportion of the zero inflated model
-if  zi.p=0, it generates data which follows Poisson or NB distribution.
-mu: the lambda para in the poisson distribution or the mu para in the NB distribution
-size: the size para in the NB distribution
-p的比例为成功（不为0）的比例，然后通过以下code,将这一步骤中的非0值改为0
-0值改为非0值
 }
 \description{
 Title:simu_zi
